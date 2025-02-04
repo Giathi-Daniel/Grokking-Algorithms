@@ -1,15 +1,13 @@
-def binary_search(arr, name):
-    low = 0
-    high = len(arr) - 1
+# calculates the maximum number of steps required for binary search on a sorted list of 128 names
 
-    while low <= high:
-        mid = (low + high) // 2
-        guess = arr[mid]
+import math
 
-        if guess == name:
-            return mid
-        elif guess > name:
-            high = mid - 1
-    return None
-my_names = [1,128]
-print(binary_search(my_names, 128))
+n = 128
+
+# Calculate the maximum number of steps using log2
+max_steps = math.log2(n)
+
+# math.ceil to round up
+max_steps = math.ceil(max_steps)
+
+print(f"The maximum number of steps required to search through a list of {n} names is: {max_steps}")
